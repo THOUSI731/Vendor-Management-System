@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework.views import APIView
-from .models import Vendor
+from .models import Vendor,PurchaseOrder,HistoricalPerformance
 from .api.serializers import VendorModelSerializer,VendorPOSTSerializer
 from rest_framework.response import Response
 from rest_framework import status
@@ -55,9 +55,7 @@ class VendorDetailUpdateAPIView(APIView):
         instance.delete()
         return Response({"msg":"Vendor Deleted Successfully"},status=status.HTTP_200_OK)
     
-# class PurchaseOrderListCreateAPIView(APIView):
-#     def get(self,request):
-        
+
         
     
     
